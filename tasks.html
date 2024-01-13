@@ -11,6 +11,7 @@
             // Default, submit disabled
             document.querySelector('#submit').disabled = true;
 
+            // Check for Empty Field
             document.querySelector('#task').onkeyup = () => {
                 if (document.querySelector('#task').value.trim() === '') {
                     document.querySelector('#submit').disabled =  true;
@@ -21,6 +22,7 @@
                 }
             }
 
+            // Appends the Task to the list
             document.querySelector('form').onsubmit = () => {
                 const task = document.querySelector('#task').value;
                 console.log(task);
@@ -30,6 +32,7 @@
 
                 document.querySelector('#list').append(li);
 
+                // Resets the entry field
                 document.querySelector('#task').value = '';
 
                 // After adding a task; disables the submit button again
