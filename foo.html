@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Foo</title>
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+
+            document.querySelectorAll('button').forEach(function(button) {
+                button.onclick = function() {
+                    document.querySelector('#title').innerHTML = button.dataset.text;
+                    document.querySelector('#title').innerHTML = button.dataset.text;
+                }
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <h1 id="title">WONDERLANDS x SHOWTIME</h1>
+
+    <!--    data-<any>="Value"        -->
+    <button data-text="Tsukasa">Tsukasa</button>
+    <button data-text="Emu">Emu</button>
+    <button data-text="Nene">Nene</button>
+    <button data-text="Rui">Rui</button>
+</body>
+
+</html>
