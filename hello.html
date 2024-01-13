@@ -11,13 +11,14 @@
             const heading = document.querySelector('h1');
             
             if (heading.innerHTML === 'Hello!') {
-                heading.innerHTML = 'Goodbye!';
-            } 
+                heading.innerHTML = 'Goodbye!';} 
         
             else {
-                heading.innerHTML = 'Hello!';
-            }
-        }
+                heading.innerHTML = 'Hello!';}}
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('button').onclick = hello;
+        });
 
     </script>
 
@@ -25,7 +26,7 @@
 
 <body>
     <h1>Hello!</h1>
-    <button onclick="hello()">Click Here</button>    
+    <button>Click Here</button>    
 </body>
 
 </html>
