@@ -1,0 +1,17 @@
+.pjsk {
+    text-shadow:1px 0px 2px grey, -1px 0px 2px grey, 0px 1px 2px grey, 0px -1px 2px grey;
+    color: #3fbae4;
+
+    background-image: url('https://storage.sekai.best/sekai-assets/area/area12_af_rip/background.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+
+    font-family: Arial;
+    text-align: center;
+}
+
+.wxs {
+    width: 300px; 
+    height: 400px; 
+}
