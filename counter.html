@@ -18,14 +18,21 @@
                 alert(`${counter} is an Odd Number.`)
             }
         }   
+
+        // Wait until all content is loaded then RUN the function
+        document.addEventListener('DOMContentLoaded', function() {
+        // Without count() it means that <count> will ONLY run WHEN clicked
+            document.querySelector('button').onclick = count;
+        });
+
     </script>
 
 </head>
 
 <body>
 
-    <h1>Hello!</h1>
-    <button onclick="count()">Count</button>
+    <h1>Zero</h1>
+    <button>Count</button>
     
 </body>
 
