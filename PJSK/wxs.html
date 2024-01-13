@@ -11,7 +11,7 @@
             document.querySelectorAll('button').forEach(function(button) {
                 button.onclick = function() {
                     document.querySelector('#title').innerHTML = button.dataset.text;
-                    document.querySelector('#title').innerHTML = button.dataset.text;
+                    document.querySelector('#title').style.color = button.dataset.color;
                 }
             });
         });
@@ -23,10 +23,10 @@
     <h1 id="title">WONDERLANDS x SHOWTIME</h1>
 
     <!--    data-<any>="Value"        -->
-    <button data-text="Tsukasa">Tsukasa</button>
-    <button data-text="Emu">Emu</button>
-    <button data-text="Nene">Nene</button>
-    <button data-text="Rui">Rui</button>
+    <button data-text="Tsukasa" data-color="yellow">Tsukasa</button>
+    <button data-text="Emu" data-color="pink">Emu</button>
+    <button data-text="Nene" data-color="#98FF98">Nene</button>
+    <button data-text="Rui" data-color="purple">Rui</button>
 </body>
 
 </html>
