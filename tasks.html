@@ -12,7 +12,13 @@
             document.querySelector('#submit').disabled = true;
 
             document.querySelector('#task').onkeyup = () => {
-                document.querySelector('#submit').disabled =  false; 
+                if (document.querySelector('#task').value.trim() === '') {
+                    document.querySelector('#submit').disabled =  true;
+                } 
+
+                else {
+                    document.querySelector('#submit').disabled =  false;
+                }
             }
 
             document.querySelector('form').onsubmit = () => {
