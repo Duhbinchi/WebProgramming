@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Currency Exchange</title>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            document.querySelector('form').onsubmit = () => {
+                
+                
+                
+                return false;
+            }
+
+            // https://apilayer.com/
+            let apikey ='AlZFgPBGCe1JSfqEZYk8bGBd0YriH76H'
+            fetch('https://api.apilayer.com/exchangerates_data/latest?apikey=AlZFgPBGCe1JSfqEZYk8bGBd0YriH76H&base=USD')
+            // Later, create where you can choose what to choose as base to PHP
+            
+            .then(response => response.json())
+            .then(data => {
+                const rate = data.rates.PHP;
+
+                
+                document.querySelector('body').innerHTML = `1 USD is equal to ${rate.toFixed(2)} PHP.`;
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <form>
+        <input id='currency' placeholder="currency" type="text">
+        <input type="submit" value="convert">
+    </form>
+
+    <div id="result">
+
+    </div>
+</body>
+
+</html>
