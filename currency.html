@@ -7,36 +7,37 @@
         document.addEventListener('DOMContentLoaded', () => {
 
             document.querySelector('form').onsubmit = () => {
+                // https://apilayer.com/
+                let apikey ='AlZFgPBGCe1JSfqEZYk8bGBd0YriH76H'
+                fetch('https://api.apilayer.com/exchangerates_data/latest?apikey=AlZFgPBGCe1JSfqEZYk8bGBd0YriH76H&base=USD')
+                // Later, create where you can choose what to choose as FROM base to PHP
                 
-                
-                
+                .then(response => response.json())
+                .then(data => {
+                    const currency = document.querySelector('#currency').value.toUpperCase();
+                    const rate = data.rates[currency];
+
+                    if (rate !== undefined) {
+                        document.querySelector('#result').innerHTML = `1 USD is equal to ${rate.toFixed(2)} ${currency}.`;
+                    } 
+                    else {
+                        document.querySelector('#result').innerHTML = 'Invalid Currency.';
+                    }
+            });
                 return false;
             }
-
-            // https://apilayer.com/
-            let apikey ='AlZFgPBGCe1JSfqEZYk8bGBd0YriH76H'
-            fetch('https://api.apilayer.com/exchangerates_data/latest?apikey=AlZFgPBGCe1JSfqEZYk8bGBd0YriH76H&base=USD')
-            // Later, create where you can choose what to choose as base to PHP
-            
-            .then(response => response.json())
-            .then(data => {
-                const rate = data.rates.PHP;
-
-                
-                document.querySelector('body').innerHTML = `1 USD is equal to ${rate.toFixed(2)} PHP.`;
-            });
         });
     </script>
 </head>
 
 <body>
     <form>
-        <input id='currency' placeholder="currency" type="text">
+        <input id='currency' placeholder="Currency" type="text">
         <input type="submit" value="convert">
     </form>
 
+    <br>
     <div id="result">
-
     </div>
 </body>
 
