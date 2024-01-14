@@ -13,7 +13,6 @@ function count() {
 
 // Wait until all content is loaded then RUN the function
 document.addEventListener('DOMContentLoaded', () => {
-
     document.querySelector('h1').innerHTML = localStorage.getItem('counter');
 
 // Without count() it means that <count> will ONLY run WHEN clicked
