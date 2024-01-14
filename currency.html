@@ -6,6 +6,9 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
 
+            // Disable submit when blank start
+            document.querySelector('#submit').disabled = true;
+
             document.querySelector('form').onsubmit = () => {
                 // https://apilayer.com/
                 let apikey ='AlZFgPBGCe1JSfqEZYk8bGBd0YriH76H'
@@ -23,17 +26,36 @@
                     else {
                         document.querySelector('#result').innerHTML = 'Invalid Currency.';
                     }
-            });
+
+                    // Resets the entry field
+                    document.querySelector('#currency').value = '';
+
+                    // After adding a task; disables the submit button again
+                    document.querySelector('#submit').disabled = true;
+                });
+
+                // Prevent form from submitting
                 return false;
-            }
-        });
+            };
+
+            // Check for Empty Field
+            document.querySelector('#currency').oninput = () => {
+                if (document.querySelector('#currency').value.trim() === '') {
+                    document.querySelector('#submit').disabled =  true;
+                } 
+
+                else {
+                    document.querySelector('#submit').disabled =  false;
+                }
+            };
+        }); 
     </script>
 </head>
 
 <body>
     <form>
         <input id='currency' placeholder="Currency" type="text">
-        <input type="submit" value="convert">
+        <input id='submit' type="submit" value="convert">
     </form>
 
     <br>
