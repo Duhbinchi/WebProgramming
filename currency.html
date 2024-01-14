@@ -10,11 +10,12 @@
             document.querySelector('#submit').disabled = true;
 
             document.querySelector('form').onsubmit = () => {
+
                 // https://apilayer.com/
                 let apikey ='AlZFgPBGCe1JSfqEZYk8bGBd0YriH76H'
                 fetch('https://api.apilayer.com/exchangerates_data/latest?apikey=AlZFgPBGCe1JSfqEZYk8bGBd0YriH76H&base=USD')
-                // Later, create where you can choose what to choose as FROM base to PHP
                 
+                // ! Later, create where you can choose what to choose as FROM base to PHP
                 .then(response => response.json())
                 .then(data => {
                     const currency = document.querySelector('#currency').value.toUpperCase();
@@ -32,7 +33,12 @@
 
                     // After adding a task; disables the submit button again
                     document.querySelector('#submit').disabled = true;
-                });
+                
+                })
+
+                .catch(error => {
+                    console.log('Error:', error)
+                }); 
 
                 // Prevent form from submitting
                 return false;
